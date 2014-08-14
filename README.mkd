@@ -1,0 +1,17 @@
+libdxl
+======
+
+A C library for the dynamixel servo from Robotis, such as the AX-12.
+
+Features
+--------
+
+- Based on the the Robotis DynamixelSDK.
+- Linux support
+- Support the USB2AX or USB2Dynamixel serial adapters
+
+Authors
+-------
+
+- Robotis
+- Evolutek<< (Rémi Audebert)
