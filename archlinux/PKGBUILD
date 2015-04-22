@@ -1,0 +1,27 @@
+# Maintainer: Vincent Gatine <nurelin15@gmail.com>
+pkgname=libdxl
+pkgver=
+pkgrel=1
+pkgdesc="libdxl - ax12 serial library"
+arch=('any')
+url="http://code.evolutek.org/libdxl"
+license=('beerware')
+depends=('')
+makedepends=('git')
+options=(!emptydirs)
+source=("$pkgname::git+https://bitbucket.org/evolutek/libdxl.git")
+md5sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/$pkgname"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+package() {
+  cd "$srcdir/$pkgname"
+  make
+  install -dm644 "$pkgdir/usr/lib/"
+  install -Dm644 libdxl.so "$pkgdir/usr/lib/"
+}
+
+# vim:set ts=2 sw=2 et:
