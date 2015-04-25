@@ -20,8 +20,8 @@ pkgver() {
 package() {
   cd "$srcdir/$pkgname"
   make
-  install -dm644 "$pkgdir/usr/lib/"
-  install -Dm644 libdxl.so "$pkgdir/usr/lib/"
+  install -dm755 "$pkgdir/usr/lib/"
+  install -Dm755 libdxl.so "$pkgdir/usr/lib/"
 }
 
 # vim:set ts=2 sw=2 et:
