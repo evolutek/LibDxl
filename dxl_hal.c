@@ -30,11 +30,17 @@ int dxl_hal_open(int deviceIndex, float baudrate)
 #endif
     char dev_name[100] = {0, };
 
+
+    (void)deviceIndex;
+
+/*
 #ifdef USE_USB2AX
     sprintf(dev_name, "/dev/ttyACM%d", deviceIndex); // USB2AX is ttyACM
 #else
     sprintf(dev_name, "/dev/ttyUSB%d", deviceIndex);
 #endif
+*/
+    sprintf(dev_name, "/dev/AX");
 
     strcpy(gDeviceName, dev_name);
     memset(&newtio, 0, sizeof(newtio));
